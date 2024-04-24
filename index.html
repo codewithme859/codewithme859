@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΛΉMΛD</title>
+    <link rel="shortcut icon" href="favicon.jpeg" type="image/x-icon">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 1.make a div and give it a id -->
+    <div id="detector">
+        <button class="btn">
+            404
+        </button>
+        <br>
+        <span>
+            Network Connection Error
+        </span><br><br>
+        <button type="button" id="Refresh" class="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-repeat"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
+              ></path>
+            </svg>
+            Refresh
+          </button>
+          
+    </div>
+<h1 id="hell" style="text-align: center;">ΛΉMΛD</h1>
+    <script>
+        function onFunction() {
+            document.body.classList.remove("offline");
+document.getElementById("hell").style.display = "none";
+        }
+
+        function offFunction() {
+            document.body.classList.add("offline");
+document.getElementById("hell").style.display = "block";
+
+        }
+
+        window.addEventListener('online', onFunction);
+        window.addEventListener('offline', offFunction);
+
+        // Trigger the function once at the beginning to handle the initial state
+        if (navigator.onLine) {
+            offFunction(); // If online, remove the offline class
+        } else {
+            onFunction(); // If offline, add the offline class
+        }
+
+var btn = document.getElementById("Refresh");
+btn.addEventListener("click",function(){
+    btn.classList.toggle("focus");
+    location.reload();
+})
+
+
+    </script> 
+</body>
+
+</html>
